@@ -1,0 +1,68 @@
+.social a {
+    color: #e97628;
+    transition: all 300ms ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #e97628;
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.section-heading:after {
+    background: #e97628;
+    bottom: -20px;
+    content: "";
+    height: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 120px;
+}
+
+.navbar-nav > .active > a:after, .navbar-nav > .active > a:hover:after, .navbar-nav > .active > a:focus:after {
+    transition: all 300ms ease-in-out;
+    background: #e87628;
+    opacity: 1;
+}
+
+.colorVideoclip{
+	color: #ff8f0a;
+}
+
+.colorVideoclipFondo{
+	background-color: #ff8f0a;
+	border-color: #d79435;
+}
+
+#toTop {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: none;
+    width: auto;
+}
+
+.sizeSocialIcon{
+	font-size: 20px;
+}
+
+@media (max-width: 479px)
+.btn {
+    width: auto;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.footer-logo {
+    margin: 30px 0;
+    width: auto;
+    height: 50px;
+}
+
+.footer-logo-letras {
+    margin: 30px 0;
+    width: auto;
+    height: 25px;
+}

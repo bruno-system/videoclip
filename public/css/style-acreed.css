@@ -1,0 +1,106 @@
+/* 
+  Made By : Eslam nasser 
+  FB : https://www.facebook.com/profile.php?id=100001865665027
+  
+  Feel free to edit/copy any thing you want .. 
+   I won't hunt you .. I promise ;) 
+*/
+html {
+  height: 100%;
+  background: rgb(255, 255, 255);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 1%, rgba(189, 195, 199, 1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 1%, rgba(189, 195, 199, 1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 1%, rgba(189, 195, 199, 1) 100%);
+}
+.st0{fill:#791111;}
+.st1{fill:#E0E0E0;}
+.st2{fill:#DFDFDF;}
+.st3{fill:#020101;}
+
+svg{
+  display: block;
+  width: 30%;
+  margin: 1em auto
+}
+
+
+#logo,
+#red-left,
+#red-right,
+#gray-right,
+#gray-left,
+#cap
+{
+	fill-opacity: 0;
+	stroke: rgba(9, 9, 9, .5);
+	stroke-width: 2px;
+  animation-fill-mode: both;
+	animation-name: dash, fill;
+}
+
+
+#cap{
+	stroke-dasharray: 1600;
+	stroke-dashoffset: 1600;
+	animation-duration: 10s, 5s;
+	animation-delay: 0, 100s;
+}
+
+#gray-left{
+	stroke-dasharray: 1600;
+	stroke-dashoffset: 1600;
+	animation-duration: 15s, 5s;
+	animation-delay: 4s, 5s;
+}
+
+#gray-right{
+	stroke-dasharray: 1600;
+	stroke-dashoffset: 1600;
+	animation-duration: 15s, 5s;
+	animation-delay: 3s, 5s;
+}
+
+#red-left{
+	fill-opacity: 0;
+	stroke-dasharray: 1600;
+	stroke-dashoffset: 1600;
+	animation-duration: 15s, 5s;
+	animation-delay: 3.5s, 5s;
+}
+
+#red-right{
+	stroke-dasharray: 1600;
+	stroke-dashoffset: 1600;
+	animation-duration: 15s, 5s;
+	animation-delay: 4s, 5s;
+}
+
+
+#logo{
+	stroke-width: 3px;
+	stroke-dasharray: 6000;
+	stroke-dashoffset: 6000;
+	animation-duration: 20s, 8s;
+	animation-delay: 10s, 10s;
+}
+
+
+@keyframes dash{
+	from{
+		opacity: .2;
+	}
+	to{
+		opacity: 1;
+		stroke-dashoffset: 0;
+		stroke: rgba(9, 9, 9, .85)
+		}
+	}
+
+@keyframes fill{
+	40%{
+		fill-opacity: 0;
+	}
+	100%{
+		fill-opacity: 1;
+	}
+}
