@@ -37,8 +37,7 @@ class movieController extends AppBaseController
     {
         $movies = $this->movieRepository->paginate(6);
 
-        return view('movies.index')
-            ->with('movies', $movies);
+        return view('movies.index')->with('movies', $movies);
     }
 
     /**
@@ -65,6 +64,13 @@ class movieController extends AppBaseController
         $input = $request->all();
 
         $movie = $this->movieRepository->create($input);
+
+        if($request->file('img')){
+            //almaceno si es la primera img crea la carpeta slider_images
+            $path=Storage::disk('public')->put('img_videoclip/movies_img',$request->file('img'));
+            //le paso la ruta completa
+            $movie->fill(['img'=> asset($path)])->save();
+        }
 
         Flash::success('Movie saved successfully.');
 
@@ -101,6 +107,7 @@ class movieController extends AppBaseController
     public function edit($id)
     {
         $movie = $this->movieRepository->find($id);
+        $categories=movie_category::orderBy('name')->pluck('name','id');
 
         if (empty($movie)) {
             Flash::error('Movie not found');
@@ -108,7 +115,7 @@ class movieController extends AppBaseController
             return redirect(route('movies.index'));
         }
 
-        return view('movies.edit')->with('movie', $movie);
+        return view('movies.edit',compact('movie','categories'));
     }
 
     /**
@@ -122,7 +129,8 @@ class movieController extends AppBaseController
     public function update($id, UpdatemovieRequest $request)
     {
         $movie = $this->movieRepository->find($id);
-
+       // $request->img
+        
         if (empty($movie)) {
             Flash::error('Movie not found');
 
@@ -130,6 +138,13 @@ class movieController extends AppBaseController
         }
 
         $movie = $this->movieRepository->update($request->all(), $id);
+
+        if($request->file('img')){ 
+            //almaceno si es la prima img crea la carpeta slider_images
+            $path=Storage::disk('public')->put('img_videoclip/movies_img',$request->file('img'));
+            //le paso la ruta completa
+            $movie->fill(['img'=> asset($path)])->save();
+        }
 
         Flash::success('Movie updated successfully.');
 

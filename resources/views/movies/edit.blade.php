@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($movie, ['route' => ['movies.update', $movie->id], 'method' => 'patch']) !!}
+                   {!! Form::model($movie, ['route' => ['movies.update', $movie->id], 'method' => 'patch','enctype' => 'multipart/form-data']) !!}
 
                         @include('movies.fields')
 

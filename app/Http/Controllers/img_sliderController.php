@@ -68,7 +68,7 @@ class img_sliderController extends AppBaseController
 
         if($request->file('img')){
             //almaceno si es la prima img crea la carpeta slider_images
-            $path=Storage::disk('public')->put('slider_images',$request->file('img'));
+            $path=Storage::disk('public')->put('img_videoclip/slider_images',$request->file('img'));
             //le paso la ruta completa
             $imgSlider->fill(['img'=> asset($path)])->save();
         }
@@ -141,7 +141,7 @@ class img_sliderController extends AppBaseController
 
         if($request->file('img')){
             //almaceno si es la prima img crea la carpeta slider_images
-            $path=Storage::disk('public')->put('slider_images',$request->file('img'));
+            $path=Storage::disk('public')->put('img_videoclip/slider_images',$request->file('img'));
             //le paso la ruta completa
             $imgSlider->fill(['img'=> asset($path)])->save();
         }

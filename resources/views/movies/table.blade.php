@@ -15,7 +15,7 @@
         @foreach($movies as $movie)
             <tr>
                 <td>{!! $movie->title !!}</td>
-            <td>{!! $movie->img !!}</td>
+            <td><img src="{!! $movie->img !!}" class="img-responsive" alt="" width="200"></td>
             <td>{!! $movie->video !!}</td>
             <td>{!! $movie->description !!}</td>
             <td>{!! $movie->show !!}</td>
