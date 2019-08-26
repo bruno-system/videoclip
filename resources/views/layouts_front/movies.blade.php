@@ -8,6 +8,37 @@
             <div class="post-slider col-md-12">
                 <!-- NEWS CAROSUEL -->
                 <div class="swiper-wrapper">
+
+
+
+                    @foreach($movies as $movie)
+                        <!-- SINGLE NEWS ITEM -->
+                        <div class="swiper-slide">
+                                <div class="post-entry wow fadeInUp " style="">
+                                    <a class="h3 text-center" href="#" data-toggle="modal" data-target="#post-01">
+                                        {!! $movie->title !!}
+                                    </a>
+        
+                                    <a href="#" data-toggle="modal" data-target="#post-01">
+                                        <span class="post-entry-cover" style="background-image:url({{ $movie->img }});">
+                                        </span>
+                                    </a>
+                                    
+                                    <p class="text-right" >{!! $movie->description !!}</p>
+                                    
+                                    <p>Categoria: {!! $movie->id_category !!}</p>
+                                    <br>
+                                    <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+                                        <p class="text-right "><b>VER MÁS &nbsp&nbsp</b>
+                                        <span class="ti-arrow-circle-right"></span> 
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- / SINGLE NEWS ITEM -->
+                    @endforeach
+
+
                     <!-- SINGLE NEWS ITEM -->
                     <div class="swiper-slide">
                         <div class="post-entry wow fadeInUp " style="">
@@ -115,9 +146,7 @@
                                 <span class="post-entry-time pull-right">COMPLEJIDAD &nbsp <span class="glyphicon glyphicon-record"></span> <span class="glyphicon glyphicon-record"></span> <span class="glyphicon glyphicon-record"></span> 
                                     <span class="post-entry-category">interior, furnitures</span>
                                 </span> 
-
-                                <span class="post-entry-time pull-right">JUGADORES  &nbsp <span class="ti-user"></span> <span class="ti-user"></span> <span class="ti-user"></span> <span class="ti-user"></span> 
-                                    
+  
                                 </span>
                             </span>
 
