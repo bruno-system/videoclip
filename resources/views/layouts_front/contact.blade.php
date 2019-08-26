@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h3 class="section-heading">CONTACTO</h3>
-                <p class="text-center">Lorem ipsum dolor sit amet, consectetur <br> adipisicing elit. Labore porro quo fugit, nostrum doloremque </p>
+                <p class="text-center">Siempre disponible para su consulta.</p>
             </div>
             @if ( session('mensaje') )
                 <div class="col-md-12 alert alert-success" role="alert">{{ session('mensaje') }}</div>      

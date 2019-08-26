@@ -12,8 +12,8 @@
                 -->
                 
                 <div 
-                style="text-shadow: 2px 2px 1px black;" class="home-slider-title-main white-color h2">{!! $slider->title !!}</div>
-                <div class="home-slider-title-main white-color h3">{!! $slider->description !!}</div>
+                class="home-slider-title-main white-color h2 text-sombra">{!! $slider->title !!}</div>
+                <div class="home-slider-title-main white-color h3 text-sombra">{!! $slider->description !!}</div>
                 
                 <a class="arrow bounce text-center" href="#news"> <span class="ti-mouse"></span> <span class="ti-angle-double-down"></span> </a>
             </div>

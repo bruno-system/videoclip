@@ -67,6 +67,10 @@ $(function() {
 var swiper = new Swiper('.home-slider', {
     pagination: '.home-pagination',
     paginationClickable: true,
+    spaceBetween: 30,
+    autoplay:5000,
+    speed:800,
+    effect: 'fade',
     nextButton: '.home-slider-next',
     prevButton: '.home-slider-prev'
 });

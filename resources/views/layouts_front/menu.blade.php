@@ -1,31 +1,29 @@
 <nav class="navbar navbar-fixed-top shadow" id="js-nav">
-    <div class="container-fluid">
-        <div class="navbar-header">
+    <div class="container-fluid" >
+
+        <div class="navbar-header" >
             <button type="button" class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
                 <span class="icon-bar"></span> 
                 <span class="icon-bar"></span> 
                 <span class="icon-bar"></span>
             </button>
 
-            <button type="button" class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
-             
-             <div id="icomp-neon">
-              <p><a href="#">
-                VideoClip
-              </a></p>
-              </div>	
+            <button type="button"  class="navbar-toggle"  data-target="#myNavbar" data-toggle="collapse" type="button">
+                <div id="icomp-neon">
+                    <p>
+                        <a href="#">VideoClip</a>
+                    </p>
+                </div>	
             </button>
-            
             <!--
             <button type="button" class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button">
              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>	
             </button>  -->
-            
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
 
+        <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li>
+                <li class="hidden-xs">
                     <a  > 
                       <div id="icomp-neon">
                       <p><a href="#home">VideoClip</a></p>
@@ -33,7 +31,7 @@
                     </a>
                 </li>
                 <li><a href="#news">Novedades</a></li>
-                <li><a href="#salas">salas</a></li>
+                <li><a href="#salas">Peliculas</a></li>
                 
                 <li><a href="#eventos">eventos</a></li>
                 
@@ -48,5 +46,6 @@
                 @endif
             </ul>
         </div>
+        
     </div>
 </nav>

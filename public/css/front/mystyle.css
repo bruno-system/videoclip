@@ -48,11 +48,12 @@
 	font-size: 20px;
 }
 
-@media (max-width: 479px)
+@media (max-width: 479px){
 .btn {
     width: auto;
     margin-right: 0 !important;
     margin-left: 0 !important;
+}
 }
 
 .footer-logo {
@@ -65,4 +66,22 @@
     margin: 30px 0;
     width: auto;
     height: 25px;
+}
+
+@media (min-width: 1199px) {
+.navbar-fixed-top {
+    max-height: 70px;
+    
+}
+}
+
+@media (min-width: 1200px){
+.navbar-nav {
+    
+    margin: -15px;
+}
+}
+
+.text-sombra{
+    text-shadow: 2px 2px 1px black;
 }

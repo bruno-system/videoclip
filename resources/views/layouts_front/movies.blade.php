@@ -2,7 +2,7 @@
     <div class="container overflow-hidden">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="section-heading">SALAS</h3>
+                <h3 class="section-heading">PELICULAS</h3>
             </div>
 
             <div class="post-slider col-md-12">
