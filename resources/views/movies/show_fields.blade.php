@@ -6,8 +6,8 @@
 
 <!-- Title Field -->
 <div class="form-group">
-    {!! Form::label('title', 'Title:') !!}
-    <p>{!! $movie->title !!}</p>
+    {!! Form::label('title', 'Title:') !!} <br>
+    <span class="h3">{!! $movie->title !!}</span>
 </div>
 
 <!-- Img Field -->
@@ -20,26 +20,31 @@
 <!-- Video Field -->
 <div class="form-group">
     {!! Form::label('video', 'Video:') !!}
-    <p>{!! $movie->video !!}</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{!! $movie->video !!}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <span class="text-muted">{!! $movie->video !!}</span>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/{!! $movie->video !!}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>   
 </div>
 
 <!-- Description Field -->
 <div class="form-group">
     {!! Form::label('description', 'Description:') !!}
-    <p>{!! $movie->description !!}</p>
+    <div class="well">
+        <p >{!! $movie->description !!}</p>
+    </div>
 </div>
 
 <!-- Show Field -->
 <div class="form-group">
     {!! Form::label('show', 'Show:') !!}
-    <p>{!! $movie->show !!}</p>
+    {!! $movie->show() !!}
 </div>
 
 <!-- Id Category Field -->
 <div class="form-group">
     {!! Form::label('id_category', 'Id Category:') !!}
-    <p>{!! $movie->id_category !!}</p>
+    <p>{!! $movie->category->name !!}</p>
+    
 </div>
 
 <!-- Created At Field -->

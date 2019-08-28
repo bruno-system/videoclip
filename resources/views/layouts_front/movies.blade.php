@@ -26,7 +26,7 @@
                                     
                                     <p class="text-right" >{!! $movie->description !!}</p>
                                     
-                                    <p>Categoria: {!! $movie->id_category !!}</p>
+                                    <p>Categoria: {!! $movie->category->name !!}</p>
                                     <br>
                                     <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
                                         <p class="text-right "><b>VER MÁS &nbsp&nbsp</b>

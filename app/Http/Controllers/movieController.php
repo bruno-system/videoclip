@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\movieDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreatemovieRequest;
 use App\Http\Requests\UpdatemovieRequest;
 use App\Repositories\movieRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
+use App\Http\Controllers\AppBaseController;
 use Response;
 //incluimos almacenamiento class
 use Illuminate\Support\Facades\Storage;
@@ -29,15 +30,12 @@ class movieController extends AppBaseController
     /**
      * Display a listing of the movie.
      *
-     * @param Request $request
-     *
+     * @param movieDataTable $movieDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(movieDataTable $movieDataTable)
     {
-        $movies = $this->movieRepository->paginate(6);
-
-        return view('movies.index')->with('movies', $movies);
+        return $movieDataTable->render('movies.index');
     }
 
     /**
@@ -48,7 +46,6 @@ class movieController extends AppBaseController
     public function create()
     {
         $categories=movie_category::orderBy('name')->pluck('name','id');
-        
         return view('movies.create',compact('categories'));
     }
 
@@ -80,7 +77,7 @@ class movieController extends AppBaseController
     /**
      * Display the specified movie.
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -100,7 +97,7 @@ class movieController extends AppBaseController
     /**
      * Show the form for editing the specified movie.
      *
-     * @param int $id
+     * @param  int $id
      *
      * @return Response
      */
@@ -121,7 +118,7 @@ class movieController extends AppBaseController
     /**
      * Update the specified movie in storage.
      *
-     * @param int $id
+     * @param  int              $id
      * @param UpdatemovieRequest $request
      *
      * @return Response
@@ -129,8 +126,7 @@ class movieController extends AppBaseController
     public function update($id, UpdatemovieRequest $request)
     {
         $movie = $this->movieRepository->find($id);
-       // $request->img
-        
+
         if (empty($movie)) {
             Flash::error('Movie not found');
 
@@ -154,9 +150,7 @@ class movieController extends AppBaseController
     /**
      * Remove the specified movie from storage.
      *
-     * @param int $id
-     *
-     * @throws \Exception
+     * @param  int $id
      *
      * @return Response
      */

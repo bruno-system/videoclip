@@ -45,7 +45,7 @@ class img_slider extends Model
         'img' => 'string',
         'description' => 'string',
         'show' => 'integer',
-        'id_user' => 'integer'
+        'id_user' => 'biginteger'
     ];
 
     /**

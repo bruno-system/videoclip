@@ -38,3 +38,8 @@ Route::resource('movieCategories', 'movie_categoryController');
 Route::resource('movies', 'movieController');
 
 Route::resource('configurations', 'configurationController');
+
+
+
+
+Route::resource('movies', 'movieController');

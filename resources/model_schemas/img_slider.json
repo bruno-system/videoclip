@@ -56,7 +56,7 @@
     },
     {
         "name": "id_user",
-        "dbType": "integer:unsigned:foreign,users,id",
+        "dbType": "biginteger:unsigned:foreign,users,id",
         "htmlType": "text",
         "validations": "",
         "searchable": false,

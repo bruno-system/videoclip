@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class movie
  * @package App\Models
- * @version August 17, 2019, 10:11 pm UTC
+ * @version August 28, 2019, 1:29 am -03
  *
  * @property string title
  * @property string img
@@ -61,5 +61,17 @@ class movie extends Model
         'img' => 'required'
     ];
 
-    
+    public function category()
+    {
+        return $this->belongsTo(movie_category::class, 'id_category');
+    }
+
+    public function show(){
+        $res="No";
+         if($this->show=='1'){
+             $res="Yes";
+         }
+
+         return $res;
+    }
 }
