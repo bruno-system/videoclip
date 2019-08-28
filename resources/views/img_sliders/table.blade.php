@@ -14,7 +14,7 @@
         @foreach($imgSliders as $imgSlider)
             <tr>
                 <td>{!! $imgSlider->title !!}</td>
-            <td><img src="{!! $imgSlider->img !!}" class="img-responsive" alt="" width="200"></td>
+            <td><img src="{!! $imgSlider->img !!}" class="img-thumbnail" alt="" width="200"></td>
             <td>{!! substr($imgSlider->description,0,200)  !!}</td>
             <td>{!! $imgSlider->show !!}</td>
             <td>{!! $imgSlider->id_user !!}</td>

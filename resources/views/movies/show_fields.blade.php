@@ -1,7 +1,7 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $movie->id !!}</p>
+    {!! $movie->id !!}
 </div>
 
 <!-- Title Field -->
@@ -12,14 +12,16 @@
 
 <!-- Img Field -->
 <div class="form-group">
-    {!! Form::label('img', 'Img:') !!}
-    <p>{!! $movie->img !!}</p>
+    {!! Form::label('img', 'Img:') !!} <br>
+    <img src="{!! $movie->img !!}" class="img-thumbnail" alt="" width="300">
+    
 </div>
 
 <!-- Video Field -->
 <div class="form-group">
     {!! Form::label('video', 'Video:') !!}
     <p>{!! $movie->video !!}</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/{!! $movie->video !!}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <!-- Description Field -->

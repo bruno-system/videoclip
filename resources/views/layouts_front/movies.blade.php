@@ -42,9 +42,9 @@
                     <!-- SINGLE NEWS ITEM -->
                     <div class="swiper-slide">
                         <div class="post-entry wow fadeInUp " style="">
-                            <a class="h3" href="#" data-toggle="modal" data-target="#post-01">
-                                <img src="{{ asset('images/front/tit_templarios1.png') }}" class="img-responsive"  alt="">
-                            </a>
+                                <a class="h3 text-center" href="#" data-toggle="modal" data-target="#post-01">
+                                        Un Titulo
+                                    </a>
 
                             <a href="#" data-toggle="modal" data-target="#post-01">
                                 <span class="post-entry-cover" style="background-image:url({{ asset('images/front/salas/sala1.png') }});">
@@ -52,8 +52,6 @@
                             </a>
                             
                             <p class="text-right" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit voluptatum officiis eligendi tenetur minima rem temporibus exercitationem molestiae totam natus, dolorem iure impedit aspernatur hic. Suscipit magni laborum, est aut.</p>
-                            <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more"><img src="{{ asset('images/front/bot_reserva.png') }}" class="img_responsive_md" alt=""></a>
-                            
                             <br>
                             <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
                                 <p class="text-right "><b>VER MÁS &nbsp&nbsp
@@ -67,9 +65,9 @@
                     <!-- SINGLE NEWS ITEM -->
                     <div class="swiper-slide">
                         <div class="post-entry wow fadeInUp">
-                            <a class="h3" href="#" data-toggle="modal" data-target="#post-01">
-                                <img src="{{ asset('images/front/tit_purgatorio1.png') }}" class="img-responsive"  alt="">
-                            </a>
+                                <a class="h3 text-center" href="#" data-toggle="modal" data-target="#post-01">
+                                        otro Titulo
+                                    </a>
 
                             <a href="#" data-toggle="modal" data-target="#post-01">
                                 <span class="post-entry-cover" style="background-image:url({{ asset('images/front/salas/sala3.jpg') }});">
@@ -77,7 +75,7 @@
                             </a>
 
                             <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit voluptatum officiis eligendi tenetur minima rem temporibus exercitationem molestiae totam natus, dolorem iure impedit aspernatur hic. Suscipit magni laborum, est aut.</p>
-                            <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more"><img src="{{ asset('images/front/bot_reserva.png') }}" class="img_responsive_md" alt=""></a>
+                            
                             <br>
                             <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
                                 <p class="text-right "><b>VER MÁS </b>	&nbsp&nbsp									
@@ -139,26 +137,28 @@
                     
                     <div class="modal-body">
                         <div class="post-entry post-entry-modal">
-                            <h3 class="section-heading">FICHA TECNICA.</h3> 
+                            <h3 class="section-heading">MA </h3> 
                             
                             <span class="post-entry-meta">
 
-                                <span class="post-entry-time pull-right">COMPLEJIDAD &nbsp <span class="glyphicon glyphicon-record"></span> <span class="glyphicon glyphicon-record"></span> <span class="glyphicon glyphicon-record"></span> 
+                                <span class="post-entry-time pull-right">Thriller &nbsp 
                                     <span class="post-entry-category">interior, furnitures</span>
                                 </span> 
   
                                 </span>
                             </span>
 
-                            <span class="post-entry-cover" style="background-image:url({{ asset('images/front/salas/sala1.png') }});"></span>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/eIvbEC8N3cA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+                            {{-- <span class="post-entry-cover" style="background-image:url({{ asset('images/front/salas/sala1.png') }});"></span>
+ --}}
                             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in  </p>
 
                             <div class="col-md-12 product-modal-header">
                                             <h3 class="pull-left product-modal-title">HACE TÚ RESERVA</h3>
                                     
                                             <span class="product-action-section">
-                                                <span class="price">$750.00</span>
+                                                <span class="price">$250.00</span>
                                                 <button type="button" class="btn btn-default add-item" data-image="{{ asset('images/front/product3.png') }}" data-name="Purgatorio" data-cost="750.00" data-id="8">
                                                 <span class="ti-shopping-cart"></span>add to cart </button>
                                             </span>

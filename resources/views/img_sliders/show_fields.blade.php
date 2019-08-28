@@ -1,7 +1,7 @@
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $imgSlider->id !!}</p>
+    {!! $imgSlider->id !!}
 </div>
 
 <!-- Title Field -->
@@ -12,8 +12,8 @@
 
 <!-- Img Field -->
 <div class="form-group">
-    {!! Form::label('img', 'Img:') !!}
-    <p><img src="{!! $imgSlider->img !!}" class="img-responsive" alt=""></p>
+    {!! Form::label('img', 'Img:') !!}   <br>   
+    <img src="{!! $imgSlider->img !!}" class="img-thumbnail" width="600" alt="">
 </div>
 
 <!-- Description Field -->
