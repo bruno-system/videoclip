@@ -6,6 +6,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+## Steps
+composer install
+composer update
+
+php artisan key:generate
+php artisan migrate
+
+php artisan serve
 
 ## About Laravel
 
