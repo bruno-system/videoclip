@@ -92,14 +92,6 @@
 
 </section>
 
-@if ($errors)
-    <script>  
-    window.onload = function() {
-    document.getElementById('contact').scrollIntoView(); 
-    }
-    </script>
-@endif
-
 @if (session('mensaje'))
     <script>  
     window.onload = function() {

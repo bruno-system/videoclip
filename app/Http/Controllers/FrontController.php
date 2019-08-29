@@ -15,11 +15,17 @@ class FrontController extends Controller
 {
     public function index(){
         
-        $web_config=configuration::findOrFail(1);
+        $web_config=configuration::find(1);
         $img_sliders= img_slider::orderBy('id','DESC')->get();
         $movies=movie::orderBy('id','DESC')->paginate(6);
-        return view('layouts_front.main',compact('web_config','img_sliders','movies'));
+        return view('layouts_front.front',compact('web_config','img_sliders','movies'));
 
+    }
+
+    public function showMovie($id){
+        $web_config=configuration::find(1);
+        $movie=movie::find($id);
+        return view('layouts_front.smovie',compact('web_config','movie'));
     }
 
     public function contact(Request $request){

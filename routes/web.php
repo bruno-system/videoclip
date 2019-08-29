@@ -39,7 +39,4 @@ Route::resource('movies', 'movieController');
 
 Route::resource('configurations', 'configurationController');
 
-
-
-
-Route::resource('movies', 'movieController');
+Route::get('/smovie/{id}','FrontController@showMovie')->name('smovie');

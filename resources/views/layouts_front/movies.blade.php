@@ -15,20 +15,20 @@
                         <!-- SINGLE NEWS ITEM -->
                         <div class="swiper-slide">
                                 <div class="post-entry wow fadeInUp " style="">
-                                    <a class="h3 text-center" href="#" data-toggle="modal" data-target="#post-01">
+                                    <a class="h3 text-center" href="{{ route('smovie', $movie->id) }}" >
                                         {!! $movie->title !!}
                                     </a>
         
-                                    <a href="#" data-toggle="modal" data-target="#post-01">
-                                        <span class="post-entry-cover" style="background-image:url({{ $movie->img }});">
+                                    <a class="h3 text-center" href="{{ route('smovie', $movie->id) }}" >
+                                        <span class="post-entry-cover" style="background-image:url({{ $movie->img }});" alt="{!! $movie->title !!}">
                                         </span>
                                     </a>
                                     
-                                    <p class="text-right" >{!! $movie->description !!}</p>
+                                    <p class="text-right" >{!! substr($movie->description,0,150) !!}</p>
                                     
                                     <p>Categoria: {!! $movie->category->name !!}</p>
-                                    <br>
-                                    <a href="#" data-toggle="modal" data-target="#post-01" class="post-entry-more">
+                                  
+                                <a href="{{ route('smovie', $movie->id) }}"  class="post-entry-more">
                                         <p class="text-right "><b>VER MÁS &nbsp&nbsp</b>
                                         <span class="ti-arrow-circle-right"></span> 
                                         </p>
@@ -148,7 +148,7 @@
                                 </span>
                             </span>
 
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/eIvbEC8N3cA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eIvbEC8N3cA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                             {{-- <span class="post-entry-cover" style="background-image:url({{ asset('images/front/salas/sala1.png') }});"></span>
  --}}

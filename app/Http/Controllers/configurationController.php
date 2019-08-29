@@ -46,7 +46,7 @@ public function index()
     if (empty($configuration)) {
         Flash::error('Configuration not found');
 
-        return redirect(route('configurations.index'));
+        return redirect(route('home'));
     }
 
     return view('configurations.edit')->with('configuration', $configuration);
