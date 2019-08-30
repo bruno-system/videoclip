@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="{{ asset('css/front/style-neon.css') }}">
 	<!-- myStyle -->
 	<link href="{{ asset('css/front/mystyle.css') }}" rel="stylesheet">
+	<!-- aJAX no necesario-->
+	{{-- <meta name="csrf-token" content="{{ csrf_token() }}" /> --}}
 
 	@yield('css')
 </head>
@@ -27,7 +29,9 @@
 	@include('layouts_front.footer')
 
 	<script src="{{ asset('js/front/vendor/wow.js') }}"></script>
-	<script src="{{ asset('js/front/vendor/jquery-1.11.2.min.js') }}"></script>
+	<!-- jqueery y tb necesario para ajax -->
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	{{-- <script src="{{ asset('js/front/vendor/jquery-1.11.2.min.js') }}"></script> --}}
 	<script src="{{ asset('js/front/vendor/swiper.min.js') }}"></script>
 	<script src="{{ asset('js/front/vendor/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('js/front/vendor/jquery.countTo.js') }}"></script>
@@ -52,6 +56,8 @@
 			});
 		});
 	</script>
-	@yield('javascript')
+
+	@stack('javascript')
+
 </body>
 </html>

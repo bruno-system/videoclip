@@ -24,8 +24,8 @@
 
             <div class="col-md-8 col-md-push-2">
                 <div class="contact-form">
-                <form method="POST" action="{{ route('contact')}}">
-                        @csrf
+                <form method="POST" id="formulario" action="{{ route('contact')}}">
+                        @csrf 
                         <div class="col-md-6 col-md-push-2">
                             <div class="form-group">
                                 <input 
@@ -72,8 +72,11 @@
 
                         <div class="col-md-4">
                             <button 
-                            
-                            type="submit" id="submit" name="submit" class="btn btn-primary btn-lg text-center">ENVIAR</button>
+                              id="submit" 
+                              name="submit" 
+                              class="btn btn-primary btn-lg text-center btn-submit">
+                              ENVIAR
+                            </button>
                         </div>
 
                         <div class="col-md-4">
@@ -91,6 +94,39 @@
     </div>
 
 </section>
+
+@push('javascript')
+    <!--tepa -->
+    <script type="text/javascript">
+        /* $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        }); */
+ 
+        $(".btn-submit").click(function(e){
+
+            e.preventDefault();
+
+            var name = $("input[name=name]").val();
+            var content = $("input[name=content]").val(); 
+            var mobile = $("input[name=mobile]").val();
+            var email = $("input[name=email]").val();
+            
+            $.ajax({
+    
+               type:'POST',
+               url:"{{ route('contact')}}",
+               data: $("#formulario").serialize(), 
+             //  data:{name:name, content:content, email:email, mobile:mobile},
+               success:function(data){
+                  alert(data.success);
+                  console.log(data.success);
+               }
+            });
+        });
+    </script>
+@endpush
 
 @if (session('mensaje'))
     <script>  

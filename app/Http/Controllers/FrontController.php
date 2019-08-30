@@ -45,8 +45,8 @@ class FrontController extends Controller
 
         //vista previa de email
         //return new MessageReceived($msg);
-        return back()->with('mensaje', 'email enviado');
-        
+     //   return back()->with('mensaje', 'email enviado');      
+        return response()->json(['success'=>'email enviado']);
     }
 
     public function listMovies(){

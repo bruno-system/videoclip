@@ -18,8 +18,8 @@
     </div>
 </section>
 
-@section('javascript')
-    <!-- instagramfeed-->
+@push('javascript')
+    <!-- instagramfeed.-->
 	<script src="{{ asset('js/front/jquery.instagramFeed.js') }}"></script>
 	<script>
 		(function($){
@@ -42,4 +42,5 @@
             });
         })(jQuery);
     </script>
-@endsection
+    
+@endpush

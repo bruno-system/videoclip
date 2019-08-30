@@ -10,6 +10,7 @@
  *
  */
 (function($){
+	
 	var defaults = {
 		'host': "https://www.instagram.com/",
 		'username': '',
