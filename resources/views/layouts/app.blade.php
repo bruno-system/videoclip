@@ -123,7 +123,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    InfyOm Generator
+                    Admin Generator
                 </a>
             </div>
 

@@ -17,17 +17,11 @@
 
 Route::get('/','FrontController@index')->name('index');
 
-/* Route::get('/', function () {
-    return view('layouts_front.main');
-});
- */
 Route::post('/','FrontController@contact')->name('contact');
 
 Route::get('foto/{numero?}', function ($numero = 'sin numero') {
     return ' foto con numero: '.$numero;
 })->where('numero', '[0-9]+');
-
-Auth::routes(['verify' => true]);
   
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -42,3 +36,10 @@ Route::resource('configurations', 'configurationController');
 Route::get('/smovie/{id}','FrontController@showMovie')->name('smovie');
 
 Route::get('/pmovies','FrontController@listMovies')->name('pmovies');
+
+Auth::routes([
+    'register' => false,
+    'verify' => true,
+    'reset' => true
+  ]);
+
