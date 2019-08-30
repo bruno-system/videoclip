@@ -31,12 +31,13 @@
                     </a>
                 </li>
                 <li><a href="#news">Novedades</a></li>
-                <li><a href="#salas">Peliculas</a></li>
+                <li><a href="#salas">Peliculas <span class="label label-danger" style="font-size: 80%;"> News</span></a></li>
                 
                 <li><a href="#eventos">eventos</a></li>
                 
                 <li><a href="#map">donde estamos</a></li>
                 <li><a href="#contact">contacto</a></li>
+                <li><a href="{{ route('pmovies')}}" style="color:orange">videoteca</a></li>
                 @if( $web_config->instagram!='')
                 <li><a href="{{ $web_config->instagram }}" target="_blank"><span class="ti-instagram  colorVideoclip sizeSocialIcon" ></span></a></li>
                 @endif

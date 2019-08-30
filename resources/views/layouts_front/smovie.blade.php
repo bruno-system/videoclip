@@ -41,7 +41,7 @@
             </div>
             
             <div class="col-md-12">
-                <a href="{{ route('index')}}" >
+                <a href="{{ route('pmovies')}}" >
                     <button type="button" class="btn btn-default add-item " >
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Volver
                     </button>

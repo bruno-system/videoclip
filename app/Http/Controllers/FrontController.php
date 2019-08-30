@@ -16,8 +16,9 @@ class FrontController extends Controller
     public function index(){
         
         $web_config=configuration::find(1);
-        $img_sliders= img_slider::orderBy('id','DESC')->get();
-        $movies=movie::orderBy('id','DESC')->paginate(6);
+     //   $img_sliders= img_slider::orderBy('id','DESC')->get();
+        $img_sliders= img_slider::orderBy('id','DESC')->paginate(6);
+        $movies=movie::orderBy('id','DESC')->paginate(9);
         return view('layouts_front.front',compact('web_config','img_sliders','movies'));
 
     }
@@ -29,7 +30,6 @@ class FrontController extends Controller
     }
 
     public function contact(Request $request){
-
         $msg = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -39,15 +39,21 @@ class FrontController extends Controller
         /* ,[
             'name.required' => __('Nombre es obligatorio')
         ] */
-    );
+        );
         //envia email
         Mail::to('brunoalvarado2805@gmail.com')->queue(new MessageReceived($msg));
 
         //vista previa de email
         //return new MessageReceived($msg);
-        
         return back()->with('mensaje', 'email enviado');
         
+    }
+
+    public function listMovies(){
+        $web_config=configuration::find(1);
+        $paginate=$web_config->paginateA;
+        $movies=movie::orderBy('id','DESC')->paginate($paginate);
+        return view('layouts_front.list_movie',compact('movies','web_config'));
     }
 
 }

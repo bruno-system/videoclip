@@ -89,3 +89,9 @@
 .post-entry-cover {
     height: 300px;
 }
+
+textarea.form-control.text-movie {
+    height: auto;
+    background-color: black;
+    font-size: large;
+}

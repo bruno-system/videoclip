@@ -40,3 +40,5 @@ Route::resource('movies', 'movieController');
 Route::resource('configurations', 'configurationController');
 
 Route::get('/smovie/{id}','FrontController@showMovie')->name('smovie');
+
+Route::get('/pmovies','FrontController@listMovies')->name('pmovies');
