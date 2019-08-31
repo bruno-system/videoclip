@@ -95,3 +95,7 @@ textarea.form-control.text-movie {
     background-color: black;
     font-size: large;
 }
+
+.footer {
+    padding-bottom: 0px;
+}

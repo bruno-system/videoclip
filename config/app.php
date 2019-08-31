@@ -188,6 +188,9 @@ return [
         // Español
         Laraveles\Spanish\SpanishServiceProvider::class,
 
+        //sweetalert
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+
 
     ],
 
@@ -244,6 +247,7 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
 
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

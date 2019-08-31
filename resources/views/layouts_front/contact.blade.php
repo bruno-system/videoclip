@@ -87,9 +87,6 @@
             </div>
 
 
-
-
-
         </div>
     </div>
 
@@ -112,26 +109,66 @@
             var content = $("input[name=content]").val(); 
             var mobile = $("input[name=mobile]").val();
             var email = $("input[name=email]").val();
-            
+            load();
             $.ajax({
-    
+                
                type:'POST',
                url:"{{ route('contact')}}",
                data: $("#formulario").serialize(), 
-             //  data:{name:name, content:content, email:email, mobile:mobile},
-               success:function(data){
-                  alert(data.success);
-                  console.log(data.success);
+             //data:{name:name, content:content, email:email, mobile:mobile},
+              
+             success:function(data){
+
+                  success(data.success);
+               },
+             error:function(data){
+                  success(data.success);
                }
             });
         });
+
+        function success(msg){
+            swal({
+                    position: 'top-end',
+                    type: 'success',
+                    title: msg,
+                    showConfirmButton: false,
+                    timer: 1600
+                    });
+        }
+
+        function error(msg){
+            swal({
+                    position: 'top-end',
+                    type: 'error',
+                    title: msg,
+                    showConfirmButton: false,
+                    timer: 1600
+                    });
+        }
+
+        function load(){
+            let timerInterval
+            swal({
+            title: 'Enviando',
+            position: 'top-end',
+            html: '<strong>Enviando Email</strong> espere unos segundos.',
+            timer: 2000,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+                
+            },
+            onClose: () => {
+                clearInterval(timerInterval)
+            }
+            }).then((result) => {
+            if (
+                // Read more about handling dismissals
+                result.dismiss === Swal.DismissReason.timer
+            ) {
+                console.log('I was closed by the timer')
+            }
+            });
+        }
     </script>
 @endpush
-
-@if (session('mensaje'))
-    <script>  
-    window.onload = function() {
-    document.getElementById('contact').scrollIntoView(); 
-    }
-    </script>
-@endif

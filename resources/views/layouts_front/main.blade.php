@@ -18,7 +18,6 @@
 	<link href="{{ asset('css/front/mystyle.css') }}" rel="stylesheet">
 	<!-- aJAX no necesario-->
 	{{-- <meta name="csrf-token" content="{{ csrf_token() }}" /> --}}
-
 	@yield('css')
 </head>
 
@@ -55,9 +54,15 @@
 				return false;
 			});
 		});
+
+		
 	</script>
+	<script src="{{ asset('vendor/sweet/sweetalert2all.js') }}"></script>
+
+	@include('sweet::alert')
+
 
 	@stack('javascript')
-
+	
 </body>
 </html>

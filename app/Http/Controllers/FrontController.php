@@ -19,6 +19,7 @@ class FrontController extends Controller
      //   $img_sliders= img_slider::orderBy('id','DESC')->get();
         $img_sliders= img_slider::orderBy('id','DESC')->paginate(6);
         $movies=movie::orderBy('id','DESC')->paginate(9);
+        //alert()->success('Success Message', 'Optional Title');
         return view('layouts_front.front',compact('web_config','img_sliders','movies'));
 
     }
@@ -45,7 +46,9 @@ class FrontController extends Controller
 
         //vista previa de email
         //return new MessageReceived($msg);
-     //   return back()->with('mensaje', 'email enviado');      
+     //   return back()->with('mensaje', 'email enviado');  
+        
+      //  alert()->success('Success Message', 'Optional Title');
         return response()->json(['success'=>'email enviado']);
     }
 
