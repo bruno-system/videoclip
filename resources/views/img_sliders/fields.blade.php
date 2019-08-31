@@ -5,9 +5,14 @@
 </div>
 
 <!-- Img Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
     {!! Form::label('img', 'Img:') !!}
-    {!! Form::file('img') !!}
+    {!! Form::file('img',  ['class' => 'form-control-file']) !!} <br>
+    <div id="upload-demo"></div>
+    <div id="preview-crop-image" class="col-md-12 text-center h3"
+         style="background:#9d9d9d;padding:5px;min-height:300px;">
+            Vista Imagen
+    </div>
 </div>
 <div class="clearfix"></div>
 
@@ -35,6 +40,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+    <button type="button" class="btn btn-primary btn-block upload-image" style="margin-top:2%">Upload Image</button>
+    {!! Form::submit('Save', ['class' => 'btn btn-primary ']) !!}
     <a href="{!! route('imgSliders.index') !!}" class="btn btn-default">Cancel</a>
 </div>

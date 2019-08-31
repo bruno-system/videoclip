@@ -64,18 +64,44 @@ class img_sliderController extends AppBaseController
     {
         $input = $request->all();
 
-        $imgSlider = $this->imgSliderRepository->create($input);
+        /* $imgSlider = $this->imgSliderRepository->create($input); */
 
-        if($request->file('img')){
+
+        $image_name= time().'.jpeg';
+        $base64_image = $request->imge;
+
+        if (preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
+            $data = substr($base64_image, strpos($base64_image, ',') + 1);
+            $data = base64_decode($data);
+            Storage::disk('public')->put('img_videoclip/slider_images/slider-'.$image_name, $data);
+            
+        }
+
+
+
+
+      //  $path = public_path() . "/img_videoclip/slider_images" . $image_name;
+     //   file_put_contents($path, $image);
+
+        if($request->imge){
+            //almaceno si es la prima img crea la carpeta slider_images
+          //  $path=Storage::disk('public')->put('img_videoclip/slider_images', $image);
+            //le paso la ruta completa
+       //     $imgSlider->fill(['img'=> asset($path)])->save();
+        }
+
+
+/*         if($request->file('img')){
             //almaceno si es la prima img crea la carpeta slider_images
             $path=Storage::disk('public')->put('img_videoclip/slider_images',$request->file('img'));
             //le paso la ruta completa
             $imgSlider->fill(['img'=> asset($path)])->save();
         }
 
-        Flash::success('Img Slider saved successfully.');
+        Flash::success('Img Slider saved successfully.'); */
 
-        return redirect(route('imgSliders.index'));
+    //    return redirect(route('imgSliders.index'));
+        return response()->json(['success'=>'done']);
     }
 
     /**
