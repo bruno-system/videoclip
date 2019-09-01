@@ -30,18 +30,22 @@
 
 @section('scripts')
 <script>
+    let editor;
     ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .then( editor => {
-                    console.log( editor );
-            } )
-            .catch( error => {
-                    console.error( error );
-            } );
+      .create( document.querySelector( '#editor' ) )
+      .then( newEditor  => {
+              editor = newEditor;
+              console.log( editor );
+      } )
+      .catch( error => {
+              console.error( error );
+      } );
+
+     
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"> 
     $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -76,10 +80,10 @@
     
     $('.upload-image').on('click', function (ev) {
       var title = $("input[name=title]").val();
-      var description = "xcvxcv";
+      var description = editor.getData();
       var show = $("input[name=show]").val();
       var img = $("input[name=img]").val();
-      var id_user = $("input[name=id_user]").val();
+      var id_user = $("select[name=id_user]").val();
 
 
       resize.croppie('result', {
@@ -92,6 +96,9 @@
         console.log(imge);
         console.log(img);
         console.log(title);
+        console.log(description);
+        console.log(show);
+        console.log(id_user);
         $.ajax({
           url: "{{route('imgSliders.store')}}",
           type: "POST",
