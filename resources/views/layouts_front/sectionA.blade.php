@@ -2,21 +2,29 @@
 
     <div class="countdown section contact row no-margin">
     	<div class="col-md-12">
-			<h3 class="section-heading granulado colorVideoclip">EVENTOS</h3>
+			<h3 class="section-heading granulado colorVideoclip">TE OFRECEMOS</h3>
 		</div>
 
         <div class="col-md-6 about-black-box">
-        	<ul class="product-list product-list-vertical">
+        	<ul class="product-list product-list-vertical ">
 						<li class="wow fadeInUp" data-wow-delay=".2s">
-							<span class="product-list-left pull-left">
+							<span class="product-list-left ">
 									<a href="#" data-target="#product-01" data-toggle="modal">
 										<img alt="product image" class="product-list-primary-img img-responsive" src="{{ asset('images/front/product3.jpg') }}"> 
-										<img alt="product image" class="product-list-secondary-img img-responsive" src="{{ asset('images/front/product3.png') }}">
+										<img alt="product image" class="product-list-secondary-img img-responsive" src="{{ asset('images/front/amigospelis.jpg') }}">
 									</a>
 							</span>
 
 						</li>
-						<a href="https://www.instagram.com/logicgamesargentina/" target="_blank">Seguinos en &nbsp <img     height="25px" src="{{ asset('images/front/redes.png') }}"  alt=""></a>
+						Seguinos en &nbsp 
+
+						@if( $web_config->instagram!='')
+						<a href="{{ $web_config->instagram }}" target="_blank"><span class="ti-instagram  colorVideoclip sizeSocialIcon" ></span></a>
+						@endif
+
+						@if( $web_config->facebook!='')
+						<a href="{{ $web_config->facebook }}" target="_blank"><span class="ti-facebook  colorVideoclip sizeSocialIcon"></span></a>
+						@endif
 			</ul>
 			
         	<h3 class="wow fadeInDown text-center "><b>Una peli en casa</b></h3>
@@ -28,22 +36,25 @@
 		<div class="col-md-6 about-black-box ">
 			<ul class="product-list product-list-vertical">
 						<li class="wow fadeInUp" data-wow-delay=".2s">
-							<span class="product-list-left pull-left">
+							<span class="product-list-left ">
 									<a href="#" data-target="#product-01" data-toggle="modal">
-										<img alt="product image" class="product-list-primary-img" src="{{ asset('images/front/product4.png') }}"> 
-										<img alt="product image" class="product-list-secondary-img" src="{{ asset('images/front/product3.png') }}">
+										<img alt="product image" class="product-list-primary-img" src="{{ asset('images/front/control-sm.jpg') }}"> 
+										<img alt="product image" class="product-list-secondary-img" src="{{ asset('images/front/collage-sm.jpg') }}">
 									</a>
 							</span>
 						</li>
-						<a href="https://www.facebook.com/logicgamesargentina/" target="_blank">Seguinos en &nbsp <img     height="25px" src="{{ asset('images/front/redes.png') }}"  alt=""></a>
+						Seguinos en &nbsp 
+
+						@if( $web_config->instagram!='')
+						<a href="{{ $web_config->instagram }}" target="_blank"><span class="ti-instagram  colorVideoclip sizeSocialIcon" ></span></a>
+						@endif
+
+						@if( $web_config->facebook!='')
+						<a href="{{ $web_config->facebook }}" target="_blank"><span class="ti-facebook  colorVideoclip sizeSocialIcon"></span></a>
+						@endif		
 			</ul>
-        	<h3 class="wow fadeInDown text-center"><b>Un cumple diferente</b></h3>
-        	<p class="textoBoxNegraIzquierda">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        	<h3 class="wow fadeInDown text-center"><b>Juegos para disfrutar en grande</b></h3>
+        	<p class="textoBoxNegraIzquierda">En nuestro local tambien encontraras alquileres de  los ultimos y mejores video juegos para  plataformas PS4 y PS3, sumergite en una nueva aventura virtual. </p>
 
         	
         </div>

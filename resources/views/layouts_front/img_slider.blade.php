@@ -1,7 +1,6 @@
 <section class="home section image-slider" id="home"> 
     <div class="home-slider text-center"> 
         <div class="swiper-wrapper">  
-
             @foreach($img_sliders as $slider)
             <div class="swiper-slide" style="background: url({{ $slider->img }});">
 

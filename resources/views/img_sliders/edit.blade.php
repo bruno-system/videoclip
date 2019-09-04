@@ -13,7 +13,7 @@
                <div class="row">
                    {!! Form::model($imgSlider, ['route' => ['imgSliders.update', $imgSlider->id], 'method' => 'patch' ,'enctype' => 'multipart/form-data']) !!}
 
-                        @include('img_sliders.fields')
+                        @include('img_sliders.fieldsUpdate')
 
                    {!! Form::close() !!}
                </div>

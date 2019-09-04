@@ -57,12 +57,12 @@
         enableOrientation: true,  
         viewport: { 
             width: 600,
-            height: 280,
+            height: 310,
             type: 'square'
         },
         boundary: {
-          width: 700,
-          height: 300
+          width: 800,
+          height: 340
         }
     });
     
@@ -90,15 +90,9 @@
         type: 'canvas',
         size: 'original',
         format: "jpeg",
-        quality :0.95
+        quality :0.96
 
       }).then(function (imge) {
-        console.log(imge);
-        console.log(img);
-        console.log(title);
-        console.log(description);
-        console.log(show);
-        console.log(id_user);
         $.ajax({
           url: "{{route('imgSliders.store')}}",
           type: "POST",
@@ -113,8 +107,29 @@
           },
           
           success: function (data) {
-            html = '<img src="' + imge + '" class="img-responsive" />';
-            $("#preview-crop-image").html(html);
+            swal({
+                    position: 'top-end',
+                    type: 'success',
+                    title: 'Carga con exito',
+                    showConfirmButton: true,
+                    //timer: 3600,
+                    onAfterClose: () => {
+                      window.location.href = "{{URL::to('imgSliders')}}"
+                    }
+                    });
+
+            /* html = '<img src="' + imge + '" class="img-responsive" />';
+            $("#preview-crop-image").html(html); */
+          },
+
+          error: function (data) {
+            swal({
+                    position: 'top-end',
+                    type: 'error',
+                    title: 'Oops.. algo salio mal :(',
+                    showConfirmButton: true,
+                    
+                    });
           }
         });
     

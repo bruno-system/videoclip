@@ -169,6 +169,9 @@
 
     <!-- check editopr -->
     <script src="https://cdn.ckeditor.com/ckeditor5/12.3.1/classic/ckeditor.js"></script>
+    <!-- sweet alert -->
+    <script src="{{ asset('vendor/sweet/sweetalert2all.js') }}"></script>
+    @include('sweet::alert')
 
     @yield('scripts')
 </body>

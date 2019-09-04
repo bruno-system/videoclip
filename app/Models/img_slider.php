@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class img_slider extends Model
 {
-    use SoftDeletes;
+    /* use SoftDeletes; */
 
     public $table = 'img_sliders';
     

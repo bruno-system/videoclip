@@ -30,6 +30,8 @@
 	<script src="{{ asset('js/front/vendor/wow.js') }}"></script>
 	<!-- jqueery y tb necesario para ajax -->
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- jqueery marquee -->
+	<script src="//cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js" type="text/javascript"></script>
 	{{-- <script src="{{ asset('js/front/vendor/jquery-1.11.2.min.js') }}"></script> --}}
 	<script src="{{ asset('js/front/vendor/swiper.min.js') }}"></script>
 	<script src="{{ asset('js/front/vendor/bootstrap.min.js') }}"></script>
@@ -58,9 +60,7 @@
 		
 	</script>
 	<script src="{{ asset('vendor/sweet/sweetalert2all.js') }}"></script>
-
 	@include('sweet::alert')
-
 
 	@stack('javascript')
 	

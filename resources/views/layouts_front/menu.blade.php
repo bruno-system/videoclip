@@ -33,7 +33,7 @@
                 <li><a href="#news">Novedades</a></li>
                 <li><a href="#salas">Peliculas <span class="label label-danger" style="font-size: 80%;"> News</span></a></li>
                 
-                <li><a href="#eventos">eventos</a></li>
+                <li><a href="#eventos">Te ofrecemos</a></li>
                 
                 <li><a href="#map">donde estamos</a></li>
                 <li><a href="#contact">contacto</a></li>
@@ -46,7 +46,29 @@
                 <li><a href="{{ $web_config->facebook }}" target="_blank"><span class="ti-facebook  colorVideoclip sizeSocialIcon"></span></a></li>
                 @endif
             </ul>
+            @if( $web_config->mensaje!='')
+                <div class='marquee h3 text-sombra' style="color: orange">  <b>   <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>&nbsp&nbsp {{ $web_config->mensaje }}</b>  </div>
+                @endif
         </div>
         
     </div>
 </nav>
+
+@push('javascript')
+  <script>
+    $('.marquee').marquee({
+	    //duration in milliseconds of the marquee
+        duration: 11000,
+        //gap in pixels between the tickers
+        gap: 50,
+        //time in milliseconds before the marquee will start animating
+        delayBeforeStart: 100,
+        //'left' or 'right'
+        direction: 'left',
+        //true or false - should the marquee be duplicated to show an effect of continues flow
+        duplicated: false,
+        pauseOnHover: true,
+        speed : 50
+    });
+  </script>  
+@endpush
