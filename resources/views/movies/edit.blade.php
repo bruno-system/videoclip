@@ -13,7 +13,7 @@
                <div class="row">
                    {!! Form::model($movie, ['route' => ['movies.update', $movie->id], 'method' => 'patch','enctype' => 'multipart/form-data']) !!}
 
-                        @include('movies.fields')
+                        @include('movies.fieldsUpdate')
 
                    {!! Form::close() !!}
                </div>

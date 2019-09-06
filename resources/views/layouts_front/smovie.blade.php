@@ -17,7 +17,7 @@
                     <li class="wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                         <span class="product-list-left pull-left">
                                 <a href="#" data-target="#product-01" data-toggle="modal">
-                                    <img alt="product image" class="product-list-primary-img" src="{{ $movie->img }}"> 
+                                    <img alt="product image"  src="{{ $movie->img }}"> 
                                     <span class="h3 text-center" >{{ $movie->category->name }}</span>
                                 </a>
                         </span>

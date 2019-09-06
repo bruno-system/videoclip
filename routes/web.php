@@ -14,10 +14,12 @@
 /* Route::get('/', function () {
     return view('welcome');
 }); */
+
 //Ejemplo
-Route::get('foto/{numero?}', function ($numero = 'sin numero') {
+/* Route::get('foto/{numero?}', function ($numero = 'sin numero') {
     return ' foto con numero: '.$numero;
 })->where('numero', '[0-9]+');
+ */
 
 //BACK
 Auth::routes([
@@ -41,7 +43,7 @@ Route::get('/','FrontController@index')->name('index');
 
 Route::post('/','FrontController@contact')->name('contact');
 
-Route::get('/smovie/{id}','FrontController@showMovie')->name('smovie');
+Route::get('/smovie/{id}','FrontController@showMovie')->name('smovie')->where('id', '[0-9]+');
 
 Route::get('/pmovies','FrontController@listMovies')->name('pmovies');
 

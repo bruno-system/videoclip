@@ -51,8 +51,8 @@
             <div class="col-md-12 " style="padding-left: 30px;">
                 {{ $movies->links() }}   
             </div>
-
-            <div class="col-md-12" style="padding-left: 30px;">
+            
+            <div class="col-md-12" style="padding-left: 30px; margin-top: 15px;">
                 <a href="{{ route('index')}}" >
                     <button type="button" class="btn btn-default add-item " >
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Inicio

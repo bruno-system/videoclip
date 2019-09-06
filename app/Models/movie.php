@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class movie extends Model
 {
-    use SoftDeletes;
+   // use SoftDeletes;
 
     public $table = 'movies';
     
