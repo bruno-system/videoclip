@@ -10,8 +10,8 @@
 
 <div class="container">
     <div class="row text-center">
-         <h1 style="font-family: assassinregular"> <b> Bienvenido {{ $user[0]->name }} </b></h1>
-            <?xml version="1.0" encoding="utf-8"?>
+         <h1 style="font-family: assassinregular"> <b> Bienvenido {{ Auth::user()->name}} </b></h1>
+         <?php echo    '<?xml version="1.0" encoding="utf-8"?>' ?>
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                  viewBox="0 0 612 731.9" xml:space="preserve">
             <path id="red-left" class="st0" d="M282.8,651.4c0,0-0.1,0.1-0.1,0.1c-7.6-5-15.1-10.1-23.4-14.1c-13.4-6.5-27.8-9.3-42.3-12.2

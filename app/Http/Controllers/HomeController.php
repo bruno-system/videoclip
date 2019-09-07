@@ -25,8 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        $user = App\User::all();
-        return view('home',compact('user'));
+        return view('home');
     }
 }

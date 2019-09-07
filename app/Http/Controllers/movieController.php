@@ -66,7 +66,9 @@ class movieController extends AppBaseController
             //almaceno si es la primera img crea la carpeta slider_images
             $path=Storage::disk('public')->put('img_videoclip/movies_img',$request->file('img'));
             //le paso la ruta completa
-            $movie->fill(['img'=> asset($path)])->save();
+            //$movie->fill(['img'=> asset($path)])->save();
+            $rutaImg='img_videoclip/movies_img/'.basename($path);
+            $movie->fill(['img'=> $rutaImg ])->save();
         }
 
         Flash::success('Movie saved successfully.');

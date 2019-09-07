@@ -42,7 +42,9 @@ class FrontController extends Controller
         ] */
         );
         //envia email
-        Mail::to('brunoalvarado2805@gmail.com')->queue(new MessageReceived($msg));
+        Mail::to('nacho_16_5@hotmail.com')
+            ->bcc(['brunoalvarado2805@gmail.com'])
+            ->queue(new MessageReceived($msg));
 
         //vista previa de email
         //return new MessageReceived($msg);

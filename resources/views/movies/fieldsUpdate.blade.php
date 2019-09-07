@@ -16,7 +16,7 @@
     {{-- {!! Form::file('img') !!} --}}
     <input type="hidden" value="{{ $movie->img }}" name="img">
     <div  class="col-md-12 text-center h3">
-        <img src="{{ $movie->img }}" class="img-thumbnail" style="max-height: 300px;"/>
+        <img src="{{ asset($movie->img) }}" class="img-thumbnail" style="max-height: 300px;"/>
     </div>
 </div>
 <div class="clearfix"></div>

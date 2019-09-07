@@ -13,7 +13,7 @@
 <!-- Img Field -->
 <div class="form-group">
     {!! Form::label('img', 'Img:') !!} <br>
-    <img src="{!! $movie->img !!}" class="img-thumbnail" alt="" width="300">
+    <img src="{!! asset($movie->img) !!}" class="img-thumbnail" alt="" width="300">
     
 </div>
 
