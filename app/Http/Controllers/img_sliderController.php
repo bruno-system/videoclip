@@ -78,7 +78,7 @@ class img_sliderController extends AppBaseController
             //almaceno si es la prima img crea la carpeta slider_images
             Storage::disk('public')->put('img_videoclip/slider_images/slider-'.$image_name, $data);
             //le paso la ruta completa
-            $imgSlider->fill(['img'=> asset($path)])->save();
+            $imgSlider->fill(['img'=> $path])->save();
         }
 
 
@@ -189,7 +189,7 @@ class img_sliderController extends AppBaseController
 
             return redirect(route('imgSliders.index'));
         }
-
+        Storage::disk('public')->delete($imgSlider->img);
         $this->imgSliderRepository->delete($id);
 
         Flash::success('Img Slider deleted successfully.');

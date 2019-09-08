@@ -165,7 +165,10 @@ class movieController extends AppBaseController
 
             return redirect(route('movies.index'));
         }
-
+        
+       //elimino fisicamente la img
+        Storage::disk('public')->delete($movie->img);
+        
         $this->movieRepository->delete($id);
 
         Flash::success('Movie deleted successfully.');
