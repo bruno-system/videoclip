@@ -49,6 +49,13 @@
 }
 
 @media (max-width: 479px){
+.section-heading {
+    margin-top: 80px;
+    margin-bottom: 25px;
+}
+}
+
+@media (max-width: 479px){
 .btn {
     width: auto;
     margin-right: 0 !important;

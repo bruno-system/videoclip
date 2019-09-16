@@ -48,6 +48,7 @@
 
                        
             </div>
+            <div class="row"></div>
             <div class="col-md-12 " style="padding-left: 30px;">
                 {{ $movies->links() }}   
             </div>
