@@ -18,7 +18,7 @@
                         <!-- SINGLE NEWS ITEM -->
                         <div class="col-md-4">
                                 <div class="post-entry wow fadeInUp " style="    margin-top: 20px;" >
-                                    <a class="h3 text-center" style="margin-bottom: 0px; "  href="{{ route('smovie', $movie->id) }}" >
+                                    <a class="h3 text-center" style="margin-bottom: 0px;height: 50px; "  href="{{ route('smovie', $movie->id) }}" >
                                         {!! $movie->title !!}
                                     </a>
         
