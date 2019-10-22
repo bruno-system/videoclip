@@ -11,7 +11,7 @@
     <input type="hidden" value="{{ $imgSlider->img }}" name="img">
     <div id="preview-crop-image" class="col-md-12 text-center h3"
          style="background:#9d9d9d;padding:5px;min-height:300px;">
-        <img src="{{ $imgSlider->img }}" class="img-responsive" />
+        <img src="{{ asset($imgSlider->img) }}" class="img-responsive" />
     </div>
 </div>
 <div class="clearfix"></div>
