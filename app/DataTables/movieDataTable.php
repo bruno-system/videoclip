@@ -66,6 +66,7 @@ class movieDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'id',
             'title',
             'img'=> ['name' => 'img', 'data' => 'img', 'render' => '"<img src=\""+data+"\" height=\"90\"/>"'],
             'video',

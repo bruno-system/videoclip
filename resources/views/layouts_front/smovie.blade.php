@@ -1,19 +1,19 @@
 @extends('layouts_front.main')
 
 @push('css')
-    <meta name="description" content="{!! $movie->description !!}">
-    <!-- <meta name="keywords" content="HTML, CSS, JavaScript"> -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ $movie->title}} disponible en VideoClip" />
-    <meta property="og:description" content="{{ $movie->description }}" />
-    <meta property="og:url" content="http://videocliplp.com.ar/" />
-    <meta property="og:site_name" content="VideoClip" />
-    <meta property="og:image" content="{{ asset($movie->img) }}" />
-    {{-- <meta property="og:image:secure_url" content="{{ asset($movie->img) }}" /> --}}
+<meta name="description" content="{!! strip_tags ($movie->description) !!}">
+<!-- <meta name="keywords" content="HTML, CSS, JavaScript"> -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ $movie->title}} disponible en VideoClip" />
+<meta property="og:description" content="{!! strip_tags ($movie->description) !!}" />
+{{-- <meta property="og:url" content="http://videocliplp.com.ar/" /> --}}
+<meta property="og:site_name" content="VideoClip" />
+<meta property="og:image" content="{{ asset($movie->img) }}" />
+{{-- <meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" /> --}}
+{{-- <meta property="og:image:secure_url" content="{{ asset($movie->img) }}" /> --}}
 
-    {{-- <meta name="medium" content="video">
-    <meta property="og:type" content="video">
-    <meta property="og:video" content="https://www.youtube-nocookie.com/embed/{{ $movie->video}}" /> --}}
+
 @endpush
 
 @section('content')
