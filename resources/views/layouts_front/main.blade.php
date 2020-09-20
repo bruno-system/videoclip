@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>VideoClip</title>
-	<meta content="alquiler de peliculas en dvd y  blu ray" name="description">
+	{{-- <meta content="alquiler de peliculas en dvd y  blu ray" name="description"> --}}
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<meta content="width=device-width" name="viewport">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -18,7 +18,7 @@
 	<link href="{{ asset('css/front/mystyle.css') }}" rel="stylesheet">
 	<!-- aJAX no necesario-->
 	{{-- <meta name="csrf-token" content="{{ csrf_token() }}" /> --}}
-	@yield('css')
+	@stack('css')
 </head>
 
 <body data-offset="50" data-spy="scroll" data-target=".navbar" class="dark-theme">
