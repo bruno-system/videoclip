@@ -14,3 +14,5 @@ yarn-error.log
 /.env
 /_ide_helper.php
 .phpunit.result.cache
+/public/img_videoclip/movies_img/
+/public/img_videoclip/slider_images/

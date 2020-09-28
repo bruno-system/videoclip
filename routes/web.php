@@ -45,7 +45,8 @@ Route::post('/','FrontController@contact')->name('contact');
 
 Route::get('/smovie/{id}','FrontController@showMovie')->name('smovie')->where('id', '[0-9]+');
 
-Route::get('/pmovies','FrontController@listMovies')->name('pmovies');
+Route::get('/pmovies','FrontController@listMovies')->name('pmovies'); 
 
+Route::get('/list_playgame','FrontController@listPlayGame')->name('lista_playgame');
 
 

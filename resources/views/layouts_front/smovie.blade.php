@@ -57,7 +57,7 @@
             </div>
             <div class="row"></div>
             <div class="col-md-12">
-                <a href="{{ route('pmovies')}}" >
+                <a href="{{  url()->previous() }}" >
                     <button type="button" class="btn btn-default  " >
                         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Volver
                     </button>

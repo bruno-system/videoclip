@@ -4,11 +4,11 @@
 
 @include('layouts_front.menu_simple')
 
-<section  id="salas">
+<section  id="salas" style="background-image: url({{asset('images/front/ps4-background.png')}});">
     <div class="container ">
         <div class="row">
             <div class="col-md-12 ">
-                <h3 class="section-heading " style="margin-top: 120px">PELICULAS</h3>
+                <h3 class="section-heading " style="margin-top: 120px">PS4 Games!</h3>
 
                 {{-- <select class="form-control">
                     <option value="">Default select</option>
@@ -18,13 +18,16 @@
 
             </div>
 
-            <div class="form-group col-md-4 col-md-offset-4" >
-                <label for="select" class="col-md-4 control-label" style="padding: 8px">Categoría</label>
-                <div class="col-md-8">
-                    <form method="GET">
-                        {!! Form::select('id_category', ['0' => 'Todas las categorias']+ $categories, $id_category, ['class' => 'form-control','style' => 'background: none; border-bottom: 1px solid rgb(232, 117, 40)','onChange' => 'submit()']) !!}   
-                    </form>   
-                </div>
+            <div class="col-md-4 col-md-offset-4" >
+                
+                <form method="GET" class="form-inline">
+                    <div class="form-group">
+                        <label for="select" class="" style="">Nombre</label>
+                        {!! Form::text('game_name', $game_name ,  ['class' => 'form-control','style' => 'background-color: #0000006e; border-bottom: 1px solid rgb(232, 117, 40)']) !!}   
+                        {!! Form::submit('Buscar', ['class' => ' btn btn-primary btn-sm', 'style' => ''] ) !!}  
+                    </div>
+                    
+                </form>   
             </div>
 
             <div class=" col-md-12">
@@ -66,7 +69,7 @@
             </div>
             <div class="row"></div>
             <div class="col-md-12 " style="padding-left: 30px;">
-                {{ $movies->appends(['id_category' => $id_category])->links('') }}   
+                {{ $movies->appends(['game_name' => $game_name])->links('') }}   
             </div>
             
             <div class="col-md-12" style="padding-left: 30px; margin-top: 15px;">

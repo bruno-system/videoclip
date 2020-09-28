@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\configuration;
-use App\Models\img_slider;
 use App\Models\movie;
-//agregar para mail
+use App\Models\img_slider;
+use Illuminate\Http\Request;
 use App\Mail\MessageReceived;
+//agregar para mail
+use App\Models\configuration;
+use App\Models\movie_category;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -54,11 +55,57 @@ class FrontController extends Controller
         return response()->json(['success'=>'email enviado']);
     }
 
-    public function listMovies(){
+    public function listMovies(Request $request){
+        //filter
+        $id_category=0;
+        
+        if($request->input('id_category')){
+            $id_category=$request->input('id_category');
+        } 
+
         $web_config=configuration::find(1);
         $paginate=$web_config->paginateA;
-        $movies=movie::orderBy('id','DESC')->paginate($paginate);
-        return view('layouts_front.list_movie',compact('movies','web_config'));
+        //filramosw ps4 = 11
+        $categories=movie_category::where('id','<>',11)->orderBy('name')->pluck('name','id')->toArray();
+
+        if(!$id_category){
+            $movies=movie::where('id','<>',11)
+                        ->orderBy('id','desc')
+                        ->paginate($paginate);
+        }else{
+            $movies=movie::where('id_category',$id_category)
+                        ->orderBy('title','asc')
+                        ->paginate($paginate);
+        }
+
+        return view('layouts_front.list_movie',compact('movies','web_config','categories','id_category'));
+    }
+
+    public function listPlayGame(Request $request){
+        //filter
+        $game_name='';
+        $categoriaPs4=11;
+        
+        if($request->input('game_name') != ''){
+            $game_name=$request->input('game_name');
+        } 
+
+        $web_config=configuration::find(1);
+        $paginate=$web_config->paginateA;
+
+
+        if($game_name != ''){
+            $movies=movie::where('id_category',$categoriaPs4)
+                        ->where('title', 'like', '%'.$game_name.'%')
+                        ->orderBy('id','desc')
+                        ->paginate($paginate);
+        }else{
+            $movies=movie::where('id_category',$categoriaPs4)
+                        ->orderBy('title','asc')
+                        ->paginate($paginate);
+        }
+
+        return view('layouts_front.list_playgame',compact('movies','web_config','game_name'));
     }
 
 }
