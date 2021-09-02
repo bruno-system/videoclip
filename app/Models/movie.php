@@ -74,4 +74,9 @@ class movie extends Model
 
          return $res;
     }
+
+    public function scopeTitle($query,$title)
+    {
+        return $query->where('title', 'like', '%'.$title.'%');
+    }
 }

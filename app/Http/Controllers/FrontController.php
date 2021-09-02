@@ -58,9 +58,10 @@ class FrontController extends Controller
     public function listMovies(Request $request){
         //filter
         $id_category=0;
-        
+        $title=$request->input('title');
+
         if($request->input('id_category')){
-            $id_category=$request->input('id_category');
+            $id_category=$request->input('id_category');       
         } 
 
         $web_config=configuration::find(1);
@@ -68,17 +69,20 @@ class FrontController extends Controller
         //filramosw ps4 = 11
         $categories=movie_category::where('id','<>',11)->orderBy('name')->pluck('name','id')->toArray();
 
-        if(!$id_category){
-            $movies=movie::where('id','<>',11)
+        
+        if(!$id_category){ 
+            $movies=movie::where('id_category','<>',11)
+                        ->title($title)
                         ->orderBy('id','desc')
                         ->paginate($paginate);
         }else{
             $movies=movie::where('id_category',$id_category)
+                        ->title($title)
                         ->orderBy('title','asc')
                         ->paginate($paginate);
         }
 
-        return view('layouts_front.list_movie',compact('movies','web_config','categories','id_category'));
+        return view('layouts_front.list_movie',compact('movies','web_config','categories','id_category','title'));
     }
 
     public function listPlayGame(Request $request){

@@ -18,7 +18,25 @@
 
             </div>
 
-            <div class="form-group col-md-4 col-md-offset-4" >
+            <div class="form-group col-md-4 col-md-offset-1" >
+                <label for="select" class="col-md-4 control-label" style="padding: 8px">Título</label>
+                <div class="col-md-8">
+                    <form method="GET">
+                        <div class="row">
+                        <div class="col-xs-10">
+                            {!! Form::text('title', $title, ['class' => 'form-control','style' => 'background: none; border-bottom: 1px solid rgb(232, 117, 40)']) !!}
+                        </div>
+
+                        <div class="col-xs-2">
+                            {!! Form::submit('Buscar', ['class' => 'btn btn-primary btn-xs']) !!}
+                        </div>
+                    </div>
+                        
+                    </form>   
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 col-md-offset-2" >
                 <label for="select" class="col-md-4 control-label" style="padding: 8px">Categoría</label>
                 <div class="col-md-8">
                     <form method="GET">
@@ -66,7 +84,7 @@
             </div>
             <div class="row"></div>
             <div class="col-md-12 " style="padding-left: 30px;">
-                {{ $movies->appends(['id_category' => $id_category])->links('') }}   
+                {{ $movies->appends(['id_category' => $id_category,'title' => $title])->links('') }}   
             </div>
             
             <div class="col-md-12" style="padding-left: 30px; margin-top: 15px;">
